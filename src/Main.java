@@ -6,7 +6,9 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         //System.out.println("Provide the path to the training file: ");
         //String path = sc.next();
-        String path = "";
+        String path = "src/train.txt";
+
+        //Add try catch block for checking path
         KNN.train(new ArrayList<>(DataReader.readDataset(path)));
 
         System.out.println("Input K - number of nearest neighbours: ");
@@ -19,8 +21,9 @@ public class Main {
             options = sc.nextInt();
             switch (options) {
                 case 1 -> {
-                    //Add path try catch block for filepath
-                    path = "C:\\Users\\ilyag\\Downloads\\test.txt";
+                    //System.out.println("Provide the path to the testing file: ");
+                    //path = sc.next();
+                    path = "src/test.txt";
                     ArrayList<String> test = new ArrayList<>(DataReader.readDataset(path));
                     int succes = 0;
                     for (String s : test) {
